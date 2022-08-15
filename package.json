@@ -1,5 +1,5 @@
 {
-  "name": "safe-everglades",
+  "name": "nodejs-ecommerce-V2",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,7 +9,7 @@
     "nodemon": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Akhil Sharma",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
