@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "f6e7b20f-15bf-4210-87b3-7121f2e8f724",
+		"name": "NodeJS Ecommerce Gitpod",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11345637"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"Akhil\",\r\n    \"lastName\":\"sharma\",\r\n    \"email\":\"akhilsa@gmail.com\",\r\n    \"password\":\"Axlesharma@12\",\r\n    \"phone\":\"9239292834\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/user",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "akhilsa@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Axlesharma@12",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Authentication",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmY5MGQxNWMzZDRmZDAzNWNiOTAwNzAiLCJpYXQiOjE2NjA0ODg5OTd9._TwzkjKCeSr5wXTEPD09wd1YNjCy2DEyAr-ETO9Z38U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/user/data",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categories show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/category/show",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"category",
+						"show"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"food\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/category",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/product/show",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"show"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "productImage",
+							"type": "file",
+							"src": "/C:/Users/12900/Downloads/GO (1)/99.jpg"
+						},
+						{
+							"key": "name",
+							"value": "tshirt",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "shirts",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "200",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "categoryId",
+							"value": "62f910bccfaed7056040e758",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/product",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add to cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userId\":\"62f90d15c3d4fd035cb90070\",\r\n\"productId\":\"62fa14e77dc199103bcdbd2b\",\r\n\"quantity\":20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/cart",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cart"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
