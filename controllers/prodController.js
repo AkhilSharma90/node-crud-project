@@ -15,7 +15,7 @@ exports.createProduct = async (req, res, next) => {
     };
     //const newProduct = await createProductObj(req);
     const product = await Product.create(newProduct);
-    return res.status(200).send({ message: "User created successfully!", product });
+    return res.status(200).send({ message: "Product created successfully!", product });
   } catch (error) {
     if (error.code === 11000) return res.status(200).send({ message: "product already exist" });
     return res.status(400).send({ message: "unable to create product", error });
