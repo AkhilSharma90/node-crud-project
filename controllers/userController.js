@@ -21,14 +21,3 @@ exports.deleteUser = async(req, res) => {
 exports.data = async(req, res) => {
    return res.status(200).send({message:"hitting the data route"})
 }
-
-const createUserObj = async (req) => {
-   console.log(req);
-   return{
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      password: req.body.password,
-      phone: req.body.phone,
-   };
-}
