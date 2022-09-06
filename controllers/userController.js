@@ -2,16 +2,7 @@ const User = require("../models/userModel");
 
 
 exports.signUp = async(req, res, next) => {
-   try{
-    
-      const newUser = await createUserObj(req);
-      console.log(newUser)
-      const savedUser = await User.create(newUser);
-      console.log("reached, here")
-      return res.status(200).send({message:"User created successfully", user:savedUser})
-   }catch(err){
-      return res.status(400).send({error:"Unable to create user", error: err})
-   }
+   return res.status(200).send({message:"hitting the signup route"})
 }
 
 exports.logIn = async(req, res) => {
