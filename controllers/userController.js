@@ -1,12 +1,8 @@
 const User = require("../models/userModel");
 
-const {registerValidation, loginValidation} = require("../middleware/validation");
 
 exports.signUp = async(req, res, next) => {
-   const { error, value } = registerValidation(req.body);
-   if (error) return res.status(400).send(error.details[0].message);
-
-  
+   return res.status(200).send({message:"hitting the signup route"})
 }
 
 exports.logIn = async(req, res) => {
