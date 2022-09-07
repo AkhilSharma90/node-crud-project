@@ -12,8 +12,13 @@ exports.signUp = async(req, res, next) => {
 }
 
 exports.logIn = async(req, res) => {
-    return res.status(200).send({message:"hitting the login route"})
-}
+   const foundUser = await User.findOne({email: req.body.email});
+   if(!foundUser){
+      res.status(400).send({error:"User doesn't exist"});
+   }else{
+    return res.status(200).send({message:"found user", user:foundUser})
+   }
+   }
 
 exports.updateUser = async(req, res) => {
    return res.status(200).send({message:"hitting the update user route"})
