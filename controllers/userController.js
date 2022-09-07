@@ -14,7 +14,7 @@ exports.signUp = async (req, res, next) => {
    if (error) return res.status(400).send(error.details[0].message);
  
    const emailExist = await User.findOne({ email: req.body.email }); //returns the first document that matches the query criteria or null
-   if (emailExist) return res.status(400).send({ message: "Email already exist!" });
+   if (emailExist) return res.status(400).send({ message: "Email already exists!" });
  
    try {
      const newUser = await createUserObj(req);
@@ -92,7 +92,7 @@ const createUserObj = async (req) => {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
-      password: req.body.password,
+      password: bcrypt.hashSync(req.body.password, 10),
       phone: req.body.phone,
    };
 }

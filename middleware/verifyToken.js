@@ -16,4 +16,4 @@ const verifyUser = (req, res, next) => {
 
 
 
-module.exports = { verifyUser, verifyAdmin }
+module.exports = { verifyUser}

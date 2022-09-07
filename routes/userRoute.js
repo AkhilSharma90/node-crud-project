@@ -3,7 +3,7 @@ const userController = require("../controllers/userController");
 
 const { verifyUser } = require("../middleware/verifyToken");
 
-router.get("/".userController.getAllUsers);
+router.get("/", userController.getAllUsers);
 
 router.post("/", userController.signUp);
 
