@@ -20,13 +20,32 @@ exports.logIn = async(req, res) => {
    }
    }
 
+
+   exports.getAllUsers = async(req, res) => {
+      const allUsers = await User.find({});
+      if(!allUsers){
+         res.status(400).send({"error":"no users found"})
+      }else{
+         return res.status(200).send({message:"here are the found users:", allUsers})
+      }
+   }
+
 exports.updateUser = async(req, res) => {
    return res.status(200).send({message:"hitting the update user route"})
 }
 
 exports.deleteUser = async(req, res) => {
-    console.log("reached here");
-    return res.status(200).send({message:"hitting the delete user route"})
+    try{
+      const deletedUser = await User.findByIdAndDelete(req.params.userId);
+      if(!deletedUser){
+         return res.status(400).send({message:"could not delete user, seems like a database issue"})
+      }else{
+         return res.status(200).send({message:"user deleted successfully!"})
+      }
+   }catch(error){
+      return res.status(400).send({error:"an error occured, unable to delete user"})
+   }
+    
 }
 
 exports.data = async(req, res) => {
